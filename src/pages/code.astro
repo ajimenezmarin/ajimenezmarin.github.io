@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+---
+
+<BaseLayout title="Projects" sideBarActiveItemID="services">
+  <div>
+    <div class="text-3xl w-full font-bold mb-5">Projects</div>
+  </div>
+
+  <HorizontalCard
+    title="compneuro-anatproc"
+    img="/ant_hemisph.png"
+    desc="Anatomical (T1) preprocessing code used by the Computational Neuroimaging Lab at Biocruces Bizkaia HRI"
+    url="https://github.com/compneurobilbao/compneuro-anatproc"
+    badge="Neuroimaging preprocessing"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="compneuro-dwiproc"
+    img="/ant_tracts.png"
+    desc="Duffusion weighted imaging preprocessing code used by the Computational Neuroimaging Lab at Biocruces Bizkaia HRI"
+    url="https://github.com/compneurobilbao/compneuro-dwiproc"
+    badge="Neuroimaging preprocessing"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="compneuro-fmriproc"
+    img="/ant_func.png"
+    desc="Functional MRI preprocessing code used by the Computational Neuroimaging Lab at Biocruces Bizkaia HRI"
+    url="https://github.com/compneurobilbao/compneuro-fmriproc"
+    badge="Neuroimaging preprocessing"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="BHA2"
+    img="/paper1.png"
+    desc="Code to generate structure-function multiscale networks and the neurogetic data of the resulting parcellations"
+    url="https://github.com/compneurobilbao/bha2"
+    badge="Neuroimaging analysis"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Lnm"
+    img="/paper4.webp"
+    desc="Code for performing lesion network mapping analyses either structural or functional"
+    url="https://github.com/ajimenezmarin/lnm"
+    badge="Neuroimaging analysis"
+  />
+</BaseLayout>

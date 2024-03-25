@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import createSlug from "../lib/createSlug"
+
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hola!</div>
+    <div class="text-5xl font-bold">I'm Antonio Jimenez-Marin</div>
+    <div class="text-3xl py-3 font-bold">Telecommunications Engineer and PhD in Biomedicine</div>
+    <div class="py-2">
+      <text class="text-lg">
+        My research is particularly concentrated on investigating <b>brain connectivity</b> in both health and disease, 
+        showcasing his commitment to advancing our understanding of this critical aspect of neuroscience.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a class="btn" href="https://ifiriondo.github.io/BilbaoLab/" target="_blank"> Lab Website!</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">First Author Papers 📃</div>
+  </div>
+
+  <HorizontalCard
+    title="Open datasets and code for multi-scale relations on structure, function  and neuro-genetics in the human brain"
+    img="/paper1.png"
+    desc="Antonio Jimenez-Marin, Ibai Diez, Asier Erramuzpe, Sebastiano Stramaglia, Paolo Bonifazi, Jesus M. Cortes"
+    url="https://doi.org/10.1038/s41597-024-03060-2"
+    badge2="Scientific Data"
+    badge="2024"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Cognitive and brain connectivity trajectories in critically ill COVID-19 patients"
+    img="/paper2.png"
+    desc="Daniela Ramos-Usuga*,Antonio Jimenez-Marin*, Alberto Cabrera-Zubizarreta, Itziar Benito-Sanchez, Diego Rivera, Endika Martinez-Gutierrez, Elena Panera, Victoria Boado, Fermin Labayen, Jesus M. Cortes, Juan C. Arango-Lasprilla. *Equal first-author contribution"
+    url="https://doi.org/10.3233/NRE-230216"
+    badge="2024"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="The neurogenetics of functional connectivity alterations in Autism: Insights from subtyping in 657 patients"
+    img="/paper3.jpg"
+    desc="Javier Rasero*, Antonio Jimenez-Marin*, Ibai Diez, Roberto Toro, Mazahir T. Hasan, Jesus M. Cortes. *Equal first-author contribution"
+    url="https://doi.org/10.1016/j.biopsych.2023.04.014"
+    badge="2023"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Multimodal and multidomain lesion network mapping enhances prediction of sensorimotor behavior in stroke patients"
+    img="/paper4.webp"
+    desc="Antonio Jimenez-Marin, Nele De Bruyn, Jolien Gooijers, Alberto Llera, Sarah Meyer, Kaat Alaerts, Geert Verheyden, Stephan P. Swinnen, Jesus M. Cortes"
+    url="https://doi.org/10.1038/s41598-022-26945-x"
+    badge="2022"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Transcriptional Signatures of Synaptic Vesicle Genes Define Myotonic Dystrophy Type I Neurodegeneration"
+    img="/paper5.jpg"
+    desc="Antonio Jimenez-Marin, Ibai Diez, Garazi Labayru, Andone Sistiaga, Maria Cristina Caballero, Pol Andres-Benito, Jorge Sepulcre, Isidro Ferrer, Adolfo Lopez de Munain, Jesus M. Cortes"
+    url="https://doi.org/10.1111/nan.12725"
+    badge="2021"
+  />
+  <div>
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Brain Connectivity And Cognitive Functioning In Individuals Six Months After Multiorgan Failure"
+    img="/paper6.jpg"
+    desc="Antonio Jimenez-Marin, Diego Rivera, Victoria Boado, Ibai Diez, Fermin Labayen, Irati Garrido, Daniela Ramos-Usuga, Itziar Benito-Sanchez, Alberto Cabrera-Zubizarreta, Javier Rasero, Iñigo Gabilondo, Sebastiano Stramaglia, Juan C. Arango-Lasprilla, Jesus M. Cortes"
+    url="https://doi.org/10.1016/j.nicl.2019.102137"
+    badge="2020"
+  />
+  <div>
+ 
+</BaseLayout>
